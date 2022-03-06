@@ -6,10 +6,12 @@ use App\Repository\RandonneeRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 /**
  * @ORM\Entity(repositoryClass=RandonneeRepository::class)
- *
+ * @Vich\Uploadable
 */
 class randonnee
 {
@@ -67,7 +69,11 @@ class randonnee
 
 
     /**
-     * @Assert\File(maxSize="500000000k")
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="rondoneimage", fileNameProperty="image")
+     *
+     * @var File|null
      */
     public  $file;
 
@@ -145,7 +151,7 @@ class randonnee
     /**
      * @return string
      */
-    public function getImage(): string
+    public function getImage(): ?string
     {
         return $this->image;
     }

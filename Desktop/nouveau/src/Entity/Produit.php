@@ -13,7 +13,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ProduitRepository::class)
- * @Vich\Uploadable
  */
 class Produit
 {
@@ -62,13 +61,11 @@ class Produit
     private $image;
 
 
+
     /**
-     * NOTE: This is not a mapped field of entity metadata, just a simple property.
-     *
-     * @Vich\UploadableField(mapping="produitimage", fileNameProperty="image")
-     *
-     * @var File|null
+     * @Assert\File(maxSize="500000000k")
      */
+
     public  $file;
 
 

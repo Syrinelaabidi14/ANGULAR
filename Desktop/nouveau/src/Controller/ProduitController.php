@@ -66,6 +66,8 @@ class ProduitController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $produit->getUploadFile();
+
             $entityManager->persist($produit);
             $entityManager->flush();
 

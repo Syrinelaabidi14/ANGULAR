@@ -72,7 +72,6 @@ class RondoneController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $camping->getUploadFile();
             $entityManager->persist($camping);
             $entityManager->flush();
             $this->get('session')->getFlashBag()->add(

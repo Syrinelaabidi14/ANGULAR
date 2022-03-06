@@ -9,6 +9,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class RandonneeType extends AbstractType
 {
@@ -19,7 +20,7 @@ class RandonneeType extends AbstractType
             ->add('prix')
             ->add('localisation')
             ->add('dateDeb')
-            ->add('file')
+            ->add('file',VichImageType::class)
             ->add('nbrPlace')
             ->add('idActivite',EntityType::class, array(
                 'class' => Activitie::class,

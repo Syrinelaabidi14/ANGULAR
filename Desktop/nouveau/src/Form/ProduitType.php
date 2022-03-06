@@ -19,7 +19,7 @@ class ProduitType extends AbstractType
             ->add('description')
             ->add('prix')
             ->add('stock')
-            ->add('file',VichImageType::class)
+            ->add('file')
             ->add('idCategorie',EntityType::class, array(
                 'class' => Categorie::class,
                 'choice_label' => 'nom',

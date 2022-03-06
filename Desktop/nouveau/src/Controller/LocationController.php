@@ -61,6 +61,7 @@ class LocationController extends AbstractController
         return $this->render('location/new.html.twig', [
             'location' => $location,
             'form' => $form->createView(),
+            'produit'=>$produit
         ]);
     }
 

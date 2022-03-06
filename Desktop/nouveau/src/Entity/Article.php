@@ -35,10 +35,15 @@ class Article
     /**
      * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\Length(
+     *      min = 10,
+     *      minMessage = "Your Description name must be at least {{ limit }} characters long",
+     * )
      */
+
     private $description;
     /**
-     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
     private $etat;
