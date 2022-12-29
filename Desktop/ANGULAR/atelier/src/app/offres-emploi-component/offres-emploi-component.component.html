@@ -1,0 +1,16 @@
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<div class=row>
+<div *ngFor="let article of listemploi" class="col-md-3">
+<div class="card" style="width: 23rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{article.titre}}</h5>
+      <h6 class="card-subtitle mb-3 text-muted">{{article.entreprise}}</h6>
+      <p class="card-text">{{article.reference}}</p>
+      <a href="#" class="btn btn-info">see more</a>
+      <a href="#" class="btn btn-light right" *ngIf="article.etat==true">Apply</a>
+    </div>
+  </div>
+</div>
+</div>

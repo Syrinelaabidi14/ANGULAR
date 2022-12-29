@@ -1,0 +1,25 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+
+<p>{{titre}}</p>
+
+
+<div class=row>
+    <div *ngFor="let article of listearticle" class="col-md-5">
+<div class="list-group" *ngIf="article.categorie!=='travail'">
+    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{article.titre}}</h5>
+        <small>{{article.entreprise}}</small>
+      </div>
+      <p class="mb-1">{{article.reference}}</p>
+      <small >{{article.categorie}}</small>
+    </a>
+  
+ 
+    
+  </div>
+  </div>
+  </div>
+  
